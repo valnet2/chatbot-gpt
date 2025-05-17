@@ -1,0 +1,23 @@
+OPENAI_API_KEY=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
+
+import openai
+import os
+from dotenv import load_dotenv
+
+# Cargar la variable desde el archivo .env
+load_dotenv()
+
+# Crear el cliente OpenAI
+client = openai.OpenAI(api_key=os.getenv(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))
+
+# Hacer una petición al modelo ChatGPT
+response = client.chat.completions.create(
+    model="gpt-3.5-turbo",
+    messages=[
+        {"role": "user", "content": "Hola, ¿quién eres?"}
+    ]
+)
+
+# Mostrar la respuesta
+print("🤖 Respuesta de GPT:")
+print(response.choices[0].message.content)

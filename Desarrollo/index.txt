@@ -1,0 +1,174 @@
+//versión validada en servidor DE INDEX
+//23 abril 2025 FUNCIONANDO SIN CONTROL DE HUMANO
+
+const { webcrypto } = require('crypto');
+globalThis.crypto = webcrypto;
+const { makeWASocket, useMultiFileAuthState, DisconnectReason } = require("@whiskeysockets/baileys");
+const { Boom } = require("@hapi/boom");
+const axios = require("axios");
+const mensajesProcesados = new Set();
+
+async function startBot() {
+    const { state, saveCreds } = await useMultiFileAuthState("auth_info_baileys");
+    
+    const sock = makeWASocket({
+        auth: state,
+        printQRInTerminal: true,
+        crypto: crypto
+    });
+
+    // Eventos
+    sock.ev.on("creds.update", saveCreds);
+    
+    sock.ev.on("connection.update", ({ connection, lastDisconnect }) => {
+        if (connection === "close") {
+            const shouldReconnect = (lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut);
+            console.log("❌ Conexión cerrada. ¿Reconectar?", shouldReconnect);
+            if (shouldReconnect) {
+                startBot();
+            }
+        } else if (connection === "open") {
+            console.log("✅ ¡Bot conectado exitosamente!");
+        }
+    });
+    sock.ev.on("messages.upsert", async ({ messages }) => {
+        const msg = messages[0];
+        if (!msg.message || msg.key.fromMe || !msg.key.id) return;
+        if (mensajesProcesados.has(msg.key.id)) return;
+        mensajesProcesados.add(msg.key.id);
+        setTimeout(() => mensajesProcesados.delete(msg.key.id), 30000);
+
+        const texto = extractMessageText(msg);
+        if (!texto || texto.trim().length < 2) return;
+
+        const sender = msg.key.remoteJid;
+        console.log("💬 Mensaje recibido:", texto);
+
+        // 🔐 Detectar si es un token tipo Totalpass (5-8 caracteres, alfanumérico, sin espacios)
+      //  const tokenRegex = /^[A-Z0-9]{5,8}$/i;
+        //if (tokenRegex.test(texto.trim())) {
+          //  const respuestaToken = "✅ ¡Gracias por enviar tu token de Totalpass! Ya quedó registrado para tu clase. 💪";
+            //console.log("🔐 Token detectado. Respuesta automática enviada.");
+            //await sock.sendMessage(sender, { text: respuestaToken });
+            //return;
+        //}
+
+        // 🧠 GPT: enviar a servidor Flask
+        try {
+            const response = await axios.post("http://127.0.0.1:5000/gpt", {
+                message: texto
+            }, {
+                timeout: 10000
+            });
+
+            const gptReply = response.data.reply || "🤖 Lo siento, no entendí la pregunta.";
+            console.log("🧠 GPT respondió:", gptReply);
+
+            await sock.sendMessage(sender, { text: gptReply });
+
+        } catch (error) {
+            console.error("❌ Error al comunicarse con GPT:", error.message);
+            await sock.sendMessage(sender, { text: "⚠️ No se pudo obtener respuesta de la IA." });
+        }
+    });
+}
+
+// 🔧 Función auxiliar para extraer texto limpio
+function extractMessageText(msg) {
+    return msg.message?.conversation ||
+           msg.message?.extendedTextMessage?.text ||
+           msg.message?.imageMessage?.caption ||
+           null;
+}
+
+startBot();
+
+
+
+
+
+
+////////////////////////////VERSION VIEJA /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////
+const { webcrypto } = require('crypto');
+globalThis.crypto = webcrypto;
+const { makeWASocket, useMultiFileAuthState, DisconnectReason } = require("@whiskeysockets/baileys");
+const { Boom } = require("@hapi/boom");
+const axios = require("axios");
+const mensajesProcesados = new Set();
+
+async function startBot() {
+    const { state, saveCreds } = await useMultiFileAuthState("auth_info_baileys");
+    
+    const sock = makeWASocket({
+        auth: state,
+        printQRInTerminal: true,
+        crypto: crypto
+    });
+
+    // Eventos
+    sock.ev.on("creds.update", saveCreds);
+    
+    sock.ev.on("connection.update", ({ connection, lastDisconnect }) => {
+        if (connection === "close") {
+            const shouldReconnect = (lastDisconnect.error?.output?.statusCode !== DisconnectReason.loggedOut);
+            console.log("❌ Conexión cerrada. ¿Reconectar?", shouldReconnect);
+            if (shouldReconnect) {
+                startBot();
+            }
+        } else if (connection === "open") {
+            console.log("✅ ¡Bot conectado exitosamente!");
+        }
+    });
+    sock.ev.on("messages.upsert", async ({ messages }) => {
+        const msg = messages[0];
+        if (!msg.message || msg.key.fromMe || !msg.key.id) return;
+        if (mensajesProcesados.has(msg.key.id)) return;
+        mensajesProcesados.add(msg.key.id);
+        setTimeout(() => mensajesProcesados.delete(msg.key.id), 30000);
+
+        const texto = extractMessageText(msg);
+        if (!texto || texto.trim().length < 2) return;
+
+        const sender = msg.key.remoteJid;
+        console.log("💬 Mensaje recibido:", texto);
+
+        // 🔐 Detectar si es un token tipo Totalpass (5-8 caracteres, alfanumérico, sin espacios)
+      //  const tokenRegex = /^[A-Z0-9]{5,8}$/i;
+        //if (tokenRegex.test(texto.trim())) {
+          //  const respuestaToken = "✅ ¡Gracias por enviar tu token de Totalpass! Ya quedó registrado para tu clase. 💪";
+            //console.log("🔐 Token detectado. Respuesta automática enviada.");
+            //await sock.sendMessage(sender, { text: respuestaToken });
+            //return;
+        //}
+
+        // 🧠 GPT: enviar a servidor Flask
+        try {
+            const response = await axios.post("http://127.0.0.1:5000/gpt", {
+                message: texto
+            }, {
+                timeout: 10000
+            });
+
+            const gptReply = response.data.reply || "🤖 Lo siento, no entendí la pregunta.";
+            console.log("🧠 GPT respondió:", gptReply);
+
+            await sock.sendMessage(sender, { text: gptReply });
+
+        } catch (error) {
+            console.error("❌ Error al comunicarse con GPT:", error.message);
+            await sock.sendMessage(sender, { text: "⚠️ No se pudo obtener respuesta de la IA." });
+        }
+    });
+}
+
+// 🔧 Función auxiliar para extraer texto limpio
+function extractMessageText(msg) {
+    return msg.message?.conversation ||
+           msg.message?.extendedTextMessage?.text ||
+           msg.message?.imageMessage?.caption ||
+           null;
+}
+
+startBot();
+

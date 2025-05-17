@@ -1,0 +1,60 @@
+# chat_manager.py Version 23 abril funcionando
+import os
+from collections import defaultdict
+from dotenv import load_dotenv
+import openai
+
+load_dotenv()
+
+class ConversationManager:
+    def __init__(self, prompt_path="system_prompt.txt"):
+        self.client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        # historial por remitente
+        self.history = defaultdict(list)
+        # carga el prompt de sistema desde fichero
+        with open(prompt_path, encoding="utf-8") as f:
+            self.system_prompt = f.read()
+        # opcional: longitud máxima del historial
+        self.max_turns = 20
+
+    def reset(self, user_id):
+        """Borrar historial de un usuario (p.e. ante 'reiniciar')"""
+        self.history[user_id].clear()
+
+    def get_reply(self, user_id, user_message):
+        # inyecta prompt la primera vez
+        if not self.history[user_id]:
+            self.history[user_id].append({
+                "role": "system",
+                "content": self.system_prompt
+            })
+
+        # añade mensaje del usuario
+        self.history[user_id].append({
+            "role": "user",
+            "content": user_message
+        })
+
+        # recorta si es muy largo
+        if len(self.history[user_id]) > self.max_turns * 2:
+            # siempre deja el system
+            self.history[user_id] = [self.history[user_id][0]] + \
+                self.history[user_id][-self.max_turns*2:]
+
+        # llama a OpenAI
+        resp = self.client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=self.history[user_id],
+            temperature=0.2,
+            frequency_penalty=0.7,
+            presence_penalty=0.3,
+            max_tokens=250
+        )
+        reply = resp.choices[0].message.content.strip()
+
+        # añade la respuesta al historial
+        self.history[user_id].append({
+            "role": "assistant",
+            "content": reply
+        })
+        return reply

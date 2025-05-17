@@ -1,0 +1,177 @@
+//index version 28abril 2025 17:22 - Corregido y funcionando aun contesta con humano
+const { webcrypto } = require('crypto'); // Usa 'require'
+globalThis.crypto = webcrypto;
+
+const { makeWASocket, useMultiFileAuthState, DisconnectReason } = require("@whiskeysockets/baileys");
+const { Boom } = require("@hapi/boom");
+const axios = require("axios");
+
+// Definición de estructuras de datos
+const conversacionesIniciadas = new Set(); // Almacena IDs de usuarios donde el bot inició la conversación
+const mensajesProcesados = new Map(); // Almacena IDs de mensajes procesados para evitar duplicados
+const conversacionesControladasPorHumano = new Set(); // Almacena IDs de usuarios donde un humano tomó el control
+
+// Función para verificar el estado de la conversación (Esta función no se usa actualmente, pero la mantengo si la necesitas)
+function verificarEstadoConversacion(sender) {
+    const esControlHumano = conversacionesControladasPorHumano.has(sender);
+    console.log(`Estado conversación ${sender}: ${esControlHumano ? 'Control Humano' : 'Control Bot'}`);
+    return esControlHumano;
+}
+
+// Función auxiliar para extraer texto limpio
+function extractMessageText(msg) {
+    return msg.message?.conversation ||
+        msg.message?.extendedTextMessage?.text ||
+        msg.message?.imageMessage?.caption ||
+        null;
+}
+
+async function startBot() {
+    const { state, saveCreds } = await useMultiFileAuthState("auth_info_baileys");
+    const sock = makeWASocket({
+        auth: state,
+        printQRInTerminal: true, // Asegúrate de que esto es lo que quieres para producción
+        crypto: crypto
+    });
+
+    // Evento para guardar las credenciales
+    sock.ev.on('creds.update', saveCreds);
+
+    // Evento principal para manejar mensajes
+    sock.ev.on("messages.upsert", async ({ messages }) => {
+        const msg = messages[0];
+        if (!msg.message || !msg.key.id) return;
+
+        // Obtener información detallada del mensaje
+        const sender = msg.key.remoteJid;
+        const isMe = msg.key.fromMe; // Verificar si el mensaje lo enviaste tú (el bot)
+        const texto = extractMessageText(msg);
+
+        // Verificar si el mensaje es de un grupo
+        if (sender.endsWith('@g.us')) {
+            console.log(` Mensaje de grupo ${sender} ignorado.`);
+            return;
+        }
+
+        // Lógica para manejar comandos (humano/live, humano/offline) si se envían desde el bot
+        if (texto) {
+            const comando = texto.trim().toLowerCase();
+            // Si TÚ (el bot) envías 'humano/live', marcar la conversación como controlada por humano
+            if (isMe && comando === 'humano/live') {
+                if (!conversacionesControladasPorHumano.has(sender)) {
+                    conversacionesControladasPorHumano.add(sender);
+                    console.log(` 👤 [BOT] Comando 'humano/live' enviado a ${sender}. Conversación marcada como controlada por humano.`);
+                } else {
+                    console.log(` 👤 [BOT] Comando 'humano/live' enviado a ${sender}, pero la conversación ya estaba marcada.`);
+                }
+                // NOTA: Si este es el trigger, la lógica de PERSISTENCIA (Redis) debe guardar este estado.
+                return; // Detener el procesamiento del bot para este mensaje (ya que es un comando interno)
+            } else if (isMe && comando === 'humano/offline') {
+                // Si TÚ (el bot) envías 'humano/offline', desmarcar la conversación
+                if (conversacionesControladasPorHumano.has(sender)) {
+                    conversacionesControladasPorHumano.delete(sender);
+                    console.log(` 🤖 [BOT] Comando 'humano/offline' enviado a ${sender}. Conversación desmarcada del control humano.`);
+                } else {
+                    console.log(` 🤖 [BOT] Comando 'humano/offline' enviado a ${sender}, pero la conversación no estaba marcada como controlada.`);
+                }
+                 // NOTA: Si este es el trigger, la lógica de PERSISTENCIA (Redis) debe eliminar este estado.
+                return; // Detener el procesamiento del bot para este mensaje (ya que es un comando interno)
+            }
+        }
+
+
+        // Verificar si la conversación ya está marcada como controlada por un humano
+        // NOTA: Esta verificación usará PERSISTENCIA (Redis) en el futuro.
+        if (conversacionesControladasPorHumano.has(sender)) {
+            console.log(` ✋ Conversación con ${sender} controlada por humano. El bot no responderá.`);
+            // Podrías añadir aquí lógica para notificar al agente si el usuario envía un mensaje
+            return; // El bot no responde si está en modo humano
+        }
+
+        // Verificar si la conversación fue iniciada por el bot
+        // NOTA: La lógica actual solo responde si el bot INICIÓ la conversación O si el mensaje lo envía el BOT.
+        // Si quieres que el bot responda si el USUARIO inicia la conversación, necesitas añadir el JID a 'conversacionesIniciadas'
+        // en el primer mensaje que recibes de un nuevo usuario.
+        if (!conversacionesIniciadas.has(sender) && !isMe) {
+            console.log(` 🔇 Ignorando mensaje de ${sender}: Conversación no iniciada por el bot.`);
+            return; // Ignorar si no la inició el bot y no la enviaste tú (el bot)
+        }
+
+
+        // Resto de la lógica del bot para responder a mensajes NO controlados por humano
+        if (!texto || texto.trim().length < 2) return; // Ignorar mensajes muy cortos o vacíos
+        const textoLimpio = texto.trim().toLowerCase();
+        const palabras = textoLimpio.split(/\s+/);
+        // Ajuste: Permite la palabra "humano" aunque sean menos de 3 palabras, si esa es tu detección manual.
+        if (palabras.length < 3 && !textoLimpio.includes("humano")) return;
+
+        // Evitar procesar mensajes duplicados (en memoria, se resetea al reiniciar)
+        if (mensajesProcesados.has(msg.key.id)) return;
+        mensajesProcesados.set(msg.key.id, Date.now());
+
+
+        // >>> Bloque TRY...CATCH...FINALLY Corregido <<<
+        try {
+            // >> MODIFICACIÓN AQUÍ: Envía el sender (JID) en el campo 'from' <<
+            // Esto es crucial para que el backend Python gestione el historial por usuario
+            const response = await axios.post("http://127.0.0.1:5000/gpt", {
+                from: sender, // <--- ¡Campo 'from' agregado!
+                message: texto
+            });
+            const gptReply = response.data.reply || "🤖 Lo siento, no entendí la pregunta.";
+            await sock.sendMessage(sender, { text: gptReply });
+        } // <-- CIERRE CORRECTO DEL BLOQUE 'try'
+        catch (error) { // <-- INICIO CORRECTO DEL BLOQUE 'catch'
+            console.error(" ❌ Error al comunicarse con GPT:", error.message);
+            // >> LOGS DE DEPURACIÓN ADICIONALES AQUÍ <<
+            // Ayudan a entender por qué falla la comunicación con Python
+            if (error.response && error.response.status) { // Verifica si hay una respuesta HTTP y un status (ej. 400, 500)
+                console.error(`    Estado HTTP: ${error.response.status}`);
+                if (error.response.data) { // Si hay datos en la respuesta de error de Python
+                    console.error("    Datos de la respuesta de error:", error.response.data); // Útil para ver tracebacks de errores 500
+                }
+            } else if (error.code) { // Si es un error de red como ECONNREFUSED, ETIMEOUT, etc.
+                console.error(`    Código de error: ${error.code}`); // Indica problemas de conexión o que Python no está corriendo
+            }
+            // << FIN DE LOGS ADICIONALES >>
+            // Envía un mensaje de fallback al usuario si hubo un error al comunicarse con la IA
+            await sock.sendMessage(sender, { text: "⚠️ No se pudo obtener respuesta de la IA." });
+        } // <-- CIERRE CORRECTO DEL BLOQUE 'catch'
+        finally { // <-- INICIO CORRECTO DEL BLOQUE 'finally'. ¡Esta línea debe estar en su lugar! PM2 la reporta en la línea 111 con este código.
+            // Limpia el mensaje del Map de procesados después de un tiempo
+            setTimeout(() => mensajesProcesados.delete(msg.key.id), 30000);
+        } // <-- CIERRE CORRECTO DEL BLOQUE 'finally'
+
+    }); // <-- CIERRE CORRECTO DEL MANEJADOR messages.upsert
+
+    // Evento para manejar desconexiones de Baileys
+    sock.ev.on('connection.update', (update) => {
+        const { connection, lastDisconnect } = update;
+        if (connection === 'close') {
+            console.error('Conexión perdida:', lastDisconnect?.error?.output?.statusCode);
+            // Si la conexión se cierra inesperadamente (no por QR o logout), intenta salir para que PM2 reinicie
+            if (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut &&
+                lastDisconnect?.error?.output?.statusCode !== DisconnectReason.connectionClosed) { // Añadido DisconnectReason.connectionClosed
+                console.log('Intentando reiniciar el proceso...');
+                process.exit(1); // Salir para que PM2 reinicie el bot
+            } else {
+                 console.log('Conexión cerrada intencionalmente o limpia. No reiniciar automáticamente.');
+            }
+        } else if (connection === 'open') {
+            console.log('✅ ¡Bot conectado exitosamente!');
+            // Aquí podrías añadir lógica para marcar conversaciones como no controladas por humano si el bot se reconecta después de una interrupción larga,
+            // pero con Redis sería mejor gestionar esto.
+        }
+         console.log('Estado de conexión:', update); // Loggea todas las actualizaciones de conexión
+    });
+
+    // Manejar eventos de QR (solo si printQRInTerminal es true)
+    sock.ev.on('qr', (qr) => {
+        console.log('Nuevo QR recibido:', qr); // Muestra el QR en la terminal si es necesario escanear
+    });
+
+
+} // <-- CIERRE CORRECTO DE LA FUNCIÓN startBot
+
+// Iniciar el bot al ejecutar el script
+startBot();

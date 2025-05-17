@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px;
+    background-color: #121212; /* Fondo oscuro principal */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e0e0e0; /* Texto claro por defecto */
+}
+
+.container {
+    background-color: #1e1e1e; /* Fondo oscuro para el contenedor */
+    padding: 30px;
+    border-radius: 12px; /* Bordes más redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    width: 100%;
+    max-width: 600px; /* Slightly wider */
+    text-align: center;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.header {
+    margin-bottom: 25px;
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #ffffff; /* Texto blanco para el título principal */
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8em;
+}
+
+.slogan {
+    font-size: 0.9em;
+    color: #bbbbbb; /* Texto gris claro para el eslogan */
+    margin-bottom: 25px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #cccccc; /* Texto gris más claro para etiquetas */
+}
+
+.input-group input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 12px; /* Más padding */
+    border: 1px solid #444; /* Borde más oscuro */
+    border-radius: 6px; /* Bordes más redondeados */
+    font-size: 16px;
+    background-color: #2c2c2c; /* Fondo oscuro para input */
+    color: #e0e0e0; /* Texto claro para input */
+}
+
+.input-group input[type="text"]::placeholder {
+    color: #888;
+}
+
+
+.actions button {
+    color: white;
+    border: none;
+    padding: 12px 22px; /* Ajuste de padding */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1em; /* Tamaño de fuente relativo */
+    font-weight: 600;
+    margin: 8px 5px;
+    cursor: pointer;
+    border-radius: 6px; /* Bordes más redondeados */
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.actions button:hover {
+    opacity: 0.9;
+}
+.actions button:active {
+    transform: translateY(1px);
+}
+
+
+#btnHumanIntervention {
+    background-color: #2ecc71; /* Verde esmeralda */
+}
+#btnHumanIntervention:hover {
+    background-color: #27ae60;
+}
+
+#btnBotIntervention {
+    background-color: #f1c40f; /* Amarillo girasol */
+    color: #333;
+}
+#btnBotIntervention:hover {
+    background-color: #f39c12;
+}
+
+#btnResetChat {
+    background-color: #e74c3c; /* Rojo alizarin */
+}
+#btnResetChat:hover {
+    background-color: #c0392b;
+}
+
+nav {
+    display: flex;
+    justify-content: left; /* Alinea los botones a la izquierda */
+    margin-bottom: 20px;
+}
+
+nav button {
+    background-color: #34495e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #2c3e50;
+}
+
+.tab-content {
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #2c2c2c;
+    text-align: left;
+}
+
+/* Estilos para la pestaña activa */
+nav button.active {
+    background-color: #9b59b6; /* Morado uva */
+    color: white;
+}
+
+/* Estilo para el botón de Cambiar Nombre */
+#btnUpdateName {
+    background-color: #9b59b6; /* Morado uva */
+    color: white;
+}
+
+#btnUpdateName:hover {
+    background-color: #8e44ad;
+}
+
+
+#btnRefreshWaitingList { /* Estilo para el botón de actualizar lista */
+    background-color: #3498db; /* Azul peter river */
+    margin-top: 10px; /* Espacio arriba */
+}
+#btnRefreshWaitingList:hover {
+    background-color: #2980b9;
+}
+
+/* Estilo para el nuevo botón de actualizar lista de prospectos */
+
+/* Estilos para la pestaña "Actualizar Usuarios" */
+/* Aquí se pueden agregar estilos específicos para la pestaña "Actualizar Usuarios" */
+#btnSaveChanges {
+    background-color: #e74c3c; /* Rojo alizarin */
+    color: white;
+}
+
+#btnRefreshProspectsList {
+    background-color: #8e44ad; /* Morado amatista */
+    margin-top: 10px;
+}
+#btnRefreshProspectsList:hover {
+    background-color: #732d91;
+}
+
+
+.message-area {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1em;
+    min-height: 40px;
+    border: 1px solid transparent; /* Borde base */
+}
+
+.message-area.success {
+    background-color: #27ae60; /* Verde para éxito */
+    color: #ffffff;
+    border-color: #2ecc71;
+}
+
+.message-area.error {
+    background-color: #c0392b; /* Rojo para error */
+    color: #ffffff;
+    border-color: #e74c3c;
+}
+
+/* Clase genérica para contenedores de listas con scroll */
+.list-container {
+    max-height: 200px; /* Altura máxima antes de que aparezca el scroll */
+    overflow-y: auto;  /* Scroll vertical automático si el contenido excede max-height */
+    border: 1px solid #444;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #2c2c2c; /* Fondo oscuro para la lista */
+    text-align: left;
+    min-height: 50px; /* Para que tenga algo de altura incluso vacía */
+}
+ 
+.waiting-list { /* Estilos para la lista de espera en tema oscuro - AHORA USA list-container */
+    /* Las propiedades de .list-container ya aplican.
+       Puedes añadir estilos específicos para .waiting-list aquí si es necesario,
+       o eliminar esta regla si .list-container es suficiente.
+       Por ahora, la dejo por si quieres diferenciarla sutilmente más tarde.
+    */
+}
+
+.waiting-list p {
+    margin: 5px 0;
+    color: #bbbbbb; /* Texto gris claro */
+}
+
+.waiting-list .user-id-item {
+    padding: 10px;
+    background-color: #3a3a3a; /* Fondo más oscuro para items */
+    border: 1px solid #555;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #f1c40f; /* Amarillo para destacar los User IDs */
+    font-weight: 600; /* Hacerlo un poco más grueso */
+}
+
+.waiting-list .user-id-item:hover,
+.list-container .prospect-item:hover { /* Aplicar hover también a prospect-item */
+    background-color: #4a4a4a;
+}
+
+/* Estilo para los items de la lista de prospectos (si quieres que sea diferente a user-id-item) */
+/* Si usas la clase 'user-id-item' para los prospectos como en el script.js, esta regla no es necesaria */
+/* .list-container .prospect-item { */
+    /* padding: 10px; */
+    /* background-color: #3a3a3a; */
+    /* border: 1px solid #555; */
+    /* border-radius: 4px; */
+    /* margin-bottom: 8px; */
+    /* cursor: pointer; */
+    /* transition: background-color 0.2s ease; */
+    /* color: #e0e0e0; */ /* Color de texto general para prospectos */
+/* } */
+
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body {
+        margin: 10px;
+    }
+    .container {
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.6em; /* Ajuste para móviles */
+    }
+    .slogan {
+        font-size: 0.85em;
+    }
+    .actions button {
+        font-size: 0.95em; /* Ligeramente más pequeño en móviles */
+        padding: 12px 15px; /* Ajuste de padding */
+        display: block;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+    .actions button:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .input-group input[type="text"] {
+        font-size: 1em;
+    }
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 30px 0;
+}
+
+.waiting-list {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    min-height: 50px;
+    text-align: left;
+}
+
+.waiting-list p {
+    margin: 5px 0;
+}
+
+.waiting-list .user-id-item {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.waiting-list .user-id-item:hover {
+    background-color: #f0f0f0;
+}
+
+#btnRefreshWaitingList {
+    background-color: #17a2b8; /* Info blue */
+    margin-top: 0;
+}
+#btnRefreshWaitingList:hover {
+    background-color: #117a8b;
+}

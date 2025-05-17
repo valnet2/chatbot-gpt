@@ -1,0 +1,95 @@
+Si tu IP de Contabo es 123.45.67.89 y Flask corre en el puerto 5000, la URL sería: http://123.45.67.89:5000/console_ui
+Si tienes un dominio www.michatbot.com apuntando a tu servidor y Flask corre en el puerto 80 (o usas un reverse proxy como Nginx para redirigir el puerto 80 al puerto de Flask), la URL podría ser: http://www.michatbot.com/console_ui
+
+
+
+ssh root@195.26.243.211
+
+para actualizar cualquier archivo de mi proyecto
+
+scp ".\app.py"           root@195.26.243.211:/root/whatsapp-bot-ai/app.py
+scp -v .\app.py root@195.26.243.211:/root/whatsapp-bot-ai/app.py
+
+scp ".\.env"             root@195.26.243.211:/root/whatsapp-bot-ai/.env
+scp -v .\.env             root@195.26.243.211:/root/whatsapp-bot-ai/.env
+
+
+scp ".\index.js"         root@195.26.243.211:/root/whatsapp-bot-ai/index.js
+scp -v. \index.js         root@195.26.243.211:/root/whatsapp-bot-ai/index.js
+
+
+scp ".\chat_manager.py"         root@195.26.243.211:/root/whatsapp-bot-ai/chat_manager.py
+scp -v. \chat_manager.py         root@195.26.243.211:/root/whatsapp-bot-ai/chat_manager.py
+
+
+
+scp ".\system_prompt.txt"         root@195.26.243.211:/root/whatsapp-bot-ai/system_prompt.txt
+scp -v. \system_prompt.txt         root@195.26.243.211:/root/whatsapp-bot-ai/system_prompt.txt
+scp system_prompt.txt root@195.26.243.211:/root/whatsapp-bot-ai/
+
+Rich1973#
+
+pm2 restart whatsapp-bot
+
+Tendrás que detener el servicio con este comando
+
+Parar la instancia que está corriendo:
+
+
+pm2 stop whatsapp-bot
+pm2 delete whatsapp-bot
+pkill -f "python3 app.py"
+pkill -f "node index.js"
+
+
+
+Volver a lanzar tu servidor Flask:
+
+pm2 start index.js --name whatsapp-bot
+nohup python3 app.py > flask.log 2>&1 &
+nohup node index.js > baileys.log 2>&1 &
+
+//////////////////////////////////////////////
+
+Checar pm2:
+
+pm2 list
+
+Verificar Python
+ps aux | grep python3
+
+
+El contador ↺ de whatsapp-bot debería haber aumentado.
+
+
+
+
+///////////////////////////////
+
+
+pm2 start index.js --name whatsapp-bot
+nohup python3 app.py > flask.log 2>&1 &
+nohup node index.js > baileys.log 2>&1 &
+ps aux | grep python3
+
+#verificar que ambos procesos este corriendo
+ps aux | grep node
+ps aux | grep python3
+
+
+conectarse a contalbo
+ssh root@195.26.243.211
+Rich1973#
+
+cd whatsapp-bot-ai
+
+comando para visualizar algún archio en el servidor
+
+cat /root/whatsapp-bot-ai/chat_manager.py | head -n 5
+
+cat index.js | head -n 5
+cat system_prompt.txt | head -n 5
+
+
+kill -9 40845
+
