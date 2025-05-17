@@ -1,0 +1,168 @@
+nohup: ignoring input
+{"level":30,"time":"2025-04-25T16:56:30.107Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"umInk7kgAL04tTl/Pac4tAuvwg3rnBIC/HFcbeFth3s="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:30.344Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:30.820Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:30.856Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:31.081Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:31.945Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:31.945Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:32.420Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"RoMY5BXUus++CqI/fhDu7xs9iPNCLRocO0g9kb9KWjI="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:32.671Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:33.189Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:33.205Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:33.451Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:34.163Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:34.164Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:34.577Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"UQ0UOQQEK5DyfbrcJ12lJO9hQ4+uwjob9Qk0af2PIGs="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:34.715Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:35.299Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:35.341Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:35.437Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:36.078Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:36.079Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:36.550Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"NHPFWXnMaQTJxTYcDxworYT2IypUvqKU47+4sHeAgGU="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:36.779Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:37.237Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:37.275Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:37.506Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:38.316Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:38.317Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:38.794Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"hYau0SfzXoIdiTKwhRd3D0F0Eh6qUVWGWuKBB2yU2Ak="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:39.027Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:39.507Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:39.543Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:39.774Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+📱 ID del remitente: 5215543901463-1635652560@g.us
+👥 ¿Es grupo? true
+❌ Es un grupo, no responder
+{"level":50,"time":"2025-04-25T16:56:40.467Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:40.467Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:41.276Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"Mu/V5h4f57u5XoE8a4SeKono9mHC/ZOiVqG2lZDU1ls="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:41.550Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:42.183Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:42.187Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:42.455Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:43.196Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:43.197Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:43.703Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"25HyX3XTV9fo4tSaAeiyOGk8ThL3NVJA68WVCrGvDF4="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:43.979Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:44.625Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:44.627Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:44.895Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:45.571Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:45.572Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:45.935Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"t+qTDL2ZPrEUfB/U77Z7RQQ6uvDBIY/5mwdOsbMTYUc="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:46.076Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:46.852Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:46.890Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:46.988Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:47.687Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:47.687Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:48.330Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"VBEjmjc7ckwqROwDNqplWDT8gPvi0N2n/NfNkFihvHs="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:48.546Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:48.956Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:49.032Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:49.246Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:50.073Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:50.073Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:50.782Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"ymPlVaAyp+q1z1apcLq3tmSR95/D/wM+pKcPybsp+lY="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:51.019Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:51.502Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:51.542Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:51.776Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:52.511Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:52.511Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:52.998Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"7qdkjQUaecy6QXdZBo6yEqhIKgplA8d9O3u7KTAgFCo="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:53.162Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:53.869Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:53.913Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:54.029Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:54.598Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:54.598Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:54.985Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"E0BkjHCOE9Ss2DZjMNt/S7jTnLf9Rg5jV2MJnGoztDU="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:55.133Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:55.798Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:55.835Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:55.941Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+{"level":50,"time":"2025-04-25T16:56:56.658Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":30,"time":"2025-04-25T16:56:56.658Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:57.103Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"3KPQpLlhLdXVaqz1xK26i3PFVUHBdRZkvHacQuwmSDU="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:57.323Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:57.767Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:56:57.799Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:58.015Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+📱 ID del remitente: 5215545426811@s.whatsapp.net
+👥 ¿Es grupo? false
+💬 Mensaje recibido: que debo llevar en mi primera clase
+❌ Conexión cerrada. ¿Reconectar? true
+{"level":50,"time":"2025-04-25T16:56:58.831Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"tag":"stream:error","attrs":{},"content":[{"tag":"conflict","attrs":{"type":"replaced"}}]},"msg":"stream errored out"}
+{"level":30,"time":"2025-04-25T16:56:58.831Z","pid":145218,"hostname":"vmi2566788","class":"baileys","trace":"Error: Stream Errored (conflict)\n    at WebSocketClient.<anonymous> (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:519:13)\n    at WebSocketClient.emit (node:events:513:28)\n    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:236:35\n    at Object.decodeFrame (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/noise-handler.js:144:17)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)","msg":"connection errored"}
+{"level":30,"time":"2025-04-25T16:56:59.195Z","pid":145218,"hostname":"vmi2566788","class":"baileys","browser":["Ubuntu","Chrome","22.04.4"],"helloMsg":{"clientHello":{"ephemeral":"hDb/bCvogMHTERjRN/dMx3Dag2cMnW0eS/z2eWrBo18="}},"msg":"connected to WA"}
+{"level":30,"time":"2025-04-25T16:56:59.337Z","pid":145218,"hostname":"vmi2566788","class":"baileys","node":{"username":"5215541389132","passive":false,"userAgent":{"platform":"WEB","appVersion":{"primary":2,"secondary":3000,"tertiary":1019707846},"mcc":"000","mnc":"000","osVersion":"0.1","device":"Desktop","osBuildNumber":"0.1","releaseChannel":"RELEASE","localeLanguageIso6391":"en","localeCountryIso31661Alpha2":"US"},"webInfo":{"webSubPlatform":"WEB_BROWSER"},"connectType":"WIFI_UNKNOWN","connectReason":"USER_ACTIVATED","device":68,"pull":true},"msg":"logging in..."}
+{"level":30,"time":"2025-04-25T16:56:59.942Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"29 pre-keys found on server"}
+{"level":30,"time":"2025-04-25T16:56:59.986Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"handled 0 offline messages/notifications"}
+{"level":30,"time":"2025-04-25T16:57:00.081Z","pid":145218,"hostname":"vmi2566788","class":"baileys","msg":"opened connection to WA"}
+✅ ¡Bot conectado exitosamente!
+🧠 GPT respondió: Para tu primera clase en CROSSF4, te recomendaría llevar lo siguiente:
+
+- Ropa deportiva cómoda y transpirable.
+- Zapatos deportivos adecuados para entrenar.
+- Toalla pequeña.
+- Botella de agua para mantenerte hidratado/a.
+- Si tienes, puedes traer guantes de entrenamiento y una cuerda para saltar.
+
+¡Prepárate para disfrutar de una gran experiencia! ¿Hay algo más en lo que pueda ayudarte?
+❌ Error al comunicarse con GPT: Connection Closed
+/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:57
+            throw new boom_1.Boom('Connection Closed', { statusCode: Types_1.DisconnectReason.connectionClosed });
+                  ^
+
+Error: Connection Closed
+    at sendRawMessage (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:57:19)
+    at sendNode (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:76:16)
+    at query (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/socket.js:140:15)
+    at Object.executeUSyncQuery (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/usync.js:62:30)
+    at getUSyncDevices (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js:147:35)
+    at /root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js:371:57
+    at Object.transaction (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Utils/auth-utils.js:135:32)
+    at relayMessage (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js:287:30)
+    at Object.sendMessage (/root/whatsapp-bot-ai/node_modules/@whiskeysockets/baileys/lib/Socket/messages-send.js:662:23)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5) {
+  data: null,
+  isBoom: true,
+  isServer: false,
+  output: {
+    statusCode: 428,
+    payload: {
+      statusCode: 428,
+      error: 'Precondition Required',
+      message: 'Connection Closed'
+    },
+    headers: {}
+  }
+}

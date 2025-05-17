@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consola Kouatec</title>
+    <link rel="stylesheet" href="/console_assets/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- Logo desde static/console/media/kouatec_logo.png -->
+            <img src="/console_assets/media/kouatec_logo.png" alt="Kouatec Logo" class="logo">
+            <h1>Consola de Agente - CrossF4</h1>
+            <p class="slogan">Powered by Kouatec: Equipo de computo y recursos al alcance de todos.</p>
+        </div>
+        
+        <nav>
+            <button data-tab="take_control">Tomar Control</button>
+            <button data-tab="edit">Editar Cliente</button>
+        </nav>
+
+        <div id="take_control" class="tab-content" style="display:none;">
+            <h2>Tomar Control</h2>
+            <div class="input-group">
+                <label for="take_control_user_id">User ID (Ej: 521XXXXXXXXXX@s.whatsapp.net):</label>
+                <input type="text" id="take_control_user_id" placeholder="ID del usuario de WhatsApp">
+            </div>
+
+            <div class="actions">
+                <button id="btnHumanIntervention">Tomar Control (Humano)</button>
+                <button id="btnBotIntervention">Liberar Chat (Bot)</button>
+                <button id="btnResetChat">Reiniciar Chat</button>
+            </div>
+
+            <div id="take_control_responseMessage" class="message-area">
+                <!-- Los mensajes del servidor aparecerán aquí -->
+            </div>
+                    <hr>
+        
+                    <h2>Usuarios Esperando Atención</h2>
+                    <div id="waitingUsersList" class="list-container waiting-list">
+                        <!-- Aplicar list-container -->
+                        <p>Cargando usuarios...</p>
+                    </div>
+                    <button id="btnRefreshWaitingList">Actualizar Lista</button>
+        </div>
+
+        <div id="edit" class="tab-content" style="display:none;">
+            <h2>Editar Información del Cliente</h2>
+            <div class="input-group">
+                <label for="edit_user_id">User ID:</label>
+                <input type="text" id="edit_user_id" placeholder="ID del usuario" readonly>
+            </div>
+            <div class="input-group">
+                <label for="edit_nombre">Nombre:</label>
+                <input type="text" id="edit_nombre" placeholder="Nombre del usuario">
+            </div>
+    
+            <div class="input-group">
+                <label for="edit_fecha_nacimiento">Fecha de Nacimiento:</label>
+                <input type="text" id="edit_fecha_nacimiento" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="input-group">
+                <label for="edit_fecha_ingreso">Fecha de Ingreso:</label>
+                <input type="text" id="edit_fecha_ingreso" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="input-group">
+                <label for="edit_fecha_corte">Fecha de Corte:</label>
+                <input type="text" id="edit_fecha_corte" placeholder="dd/mm/aaaa">
+            </div>
+            <div class="input-group">
+                <label for="edit_monto_pagan">Monto que Pagan:</label>
+                <input type="text" id="edit_monto_pagan" placeholder="Monto que pagan">
+            </div>
+            <button id="btnSaveChanges">Guardar Cambios</button>
+            <div id="editResponseMessage" class="message-area">
+                <!-- Los mensajes del servidor aparecerán aquí -->
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Mis Prospectos/Clientes</h2>
+        <div class="input-group">
+            <input type="text" id="prospectSearchInput" placeholder="Buscar prospecto por nombre o ID...">
+        </div>
+        <div id="prospectsList" class="list-container prospect-list"> <!-- Aplicar list-container y prospect-list -->
+            <p>Cargando prospectos...</p>
+        </div>
+        <button id="btnRefreshProspectsList">Actualizar Prospectos</button>
+    <div class="version-info">
+        Última actualización: 12 de mayo de 2025 18:12
+    </div>
+    </div>
+
+    <script src="/console_assets/script.js"></script>
+    <script src="/console_assets/tab_isolation.js"></script>
+</body>
+</html>
