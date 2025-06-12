@@ -349,6 +349,30 @@ class ConversationManager:
                 f"--- CHAT_MANAGER: Error al cancelar la membresía para user_id {user_id}")
             return False
 
+    # --- Manejo de control de usuarios ---
+    def mark_human_takeover(self, user_id):
+        """Indica que un humano toma el control de la conversación."""
+        self.is_human_active[user_id] = True
+
+    def mark_bot_intervention(self, user_id):
+        """Devuelve el control al bot y limpia la lista de espera."""
+        self.is_human_active[user_id] = False
+        self.users_requesting_human.discard(user_id)
+
+    def add_to_human_request_list(self, user_id):
+        """Añade al usuario a la lista de quienes esperan atención humana."""
+        self.users_requesting_human.add(user_id)
+
+    def get_users_waiting_for_human(self):
+        """Devuelve una lista de usuarios que han solicitado atención humana."""
+        return list(self.users_requesting_human)
+
+    def reset(self, user_id):
+        """Reinicia la conversación con un usuario."""
+        self.history[user_id] = []
+        self.is_human_active[user_id] = False
+        self.users_requesting_human.discard(user_id)
+
     def __del__(self):
         # Asegurarse de cerrar la conexión a la DB cuando el objeto es destruido
         if hasattr(self, 'db_conn') and self.db_conn:

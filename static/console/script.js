@@ -126,9 +126,69 @@ document.addEventListener('DOMContentLoaded', () => {
             editResponseMessageDiv.classList.add('error');
         }
     }
+
+    btnRefreshWaitingList.addEventListener('click', fetchWaitingUsers);
+    btnRefreshProspectsList.addEventListener('click', fetchProspects);
+    prospectSearchInput.addEventListener('input', filterProspects);
+
+    fetchWaitingUsers();
+    fetchProspects();
 });
 
-fetchProspects();
+async function fetchProspects() {
+    try {
+        const response = await fetch('/get_prospect_list');
+        const data = await response.json();
+        renderProspects(data.prospects || []);
+    } catch (error) {
+        console.error('Error al obtener prospectos:', error);
+    }
+}
+
+function renderProspects(prospects) {
+    const list = document.getElementById('prospectsList');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!prospects.length) {
+        list.innerHTML = '<p>No hay prospectos.</p>';
+        return;
+    }
+    prospects.forEach(p => {
+        const item = document.createElement('div');
+        item.className = 'user-id-item';
+        item.textContent = `${p.nombre} - ${p.user_id}`;
+        list.appendChild(item);
+    });
+    filterProspects();
+}
+
+function renderWaitingUsers(users) {
+    const list = document.getElementById('waitingUsersList');
+    if (!list) return;
+    list.innerHTML = '';
+    if (!users.length) {
+        list.innerHTML = '<p>No hay usuarios en espera.</p>';
+        return;
+    }
+    users.forEach(id => {
+        const item = document.createElement('div');
+        item.className = 'user-id-item';
+        item.textContent = id;
+        list.appendChild(item);
+    });
+}
+
+function filterProspects() {
+    const search = document.getElementById('prospectSearchInput');
+    const list = document.getElementById('prospectsList');
+    if (!search || !list) return;
+    const term = search.value.toLowerCase();
+    list.querySelectorAll('.user-id-item').forEach(el => {
+        const txt = el.textContent.toLowerCase();
+        el.style.display = txt.includes(term) ? '' : 'none';
+    });
+}
+
 async function sendUpdatedProspectData(userId, nombre, fechaNacimiento, fechaIngreso, fechaCorte, montoPagan) {
     const editResponseMessageDiv = document.getElementById('editResponseMessage');
     editResponseMessageDiv.textContent = 'Procesando...';
@@ -173,14 +233,19 @@ async function sendUpdatedProspectData(userId, nombre, fechaNacimiento, fechaIng
 }
 // Modificar función fetchWaitingUsers
 async function fetchWaitingUsers() {
-    const response = await fetch('/waiting_users');
-    const data = await response.json();
-    console.log('--- WAITING USERS:', data.waiting_users);
-    renderWaitingUsers(data.waiting_users);
+    try {
+        const response = await fetch('/waiting_users');
+        const data = await response.json();
+        console.log('--- WAITING USERS:', data.waiting_users);
+        renderWaitingUsers(data.waiting_users);
+    } catch (error) {
+        console.error('Error al obtener usuarios en espera:', error);
+    }
 }
 
 // Agregar intervalo de actualización automática
 setInterval(fetchWaitingUsers, 15000); // Actualizar cada 15 segundos
+setInterval(fetchProspects, 15000); // Actualizar prospectos cada 15 segundos
 
 function highlightWaitingUser(userId) {
     const waitingUsersList = document.getElementById('waitingUsersList');
